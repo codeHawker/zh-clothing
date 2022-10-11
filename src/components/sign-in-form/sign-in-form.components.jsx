@@ -1,8 +1,12 @@
-import './sign-in-form.styles.scss'
 import { useState } from 'react'
+
 import Button from '../button/button.component';
 import FormInput from '../form-input/form-input.component';
+
 import { signInWithGooglePopup, createUserDocumentFromAuth, signInEmailAndPasswordThroughFirebase } from '../../utils/firebase/firebase.utils';
+
+
+import './sign-in-form.styles.scss'
 
 const defaultFormFields = {
     email: '',
@@ -24,15 +28,13 @@ const SignInForm = () => {
     };
 
     const signInWithGoogle = async () => {
-        const {user} = await signInWithGooglePopup();
-        await createUserDocumentFromAuth(user);
+        await signInWithGooglePopup();
     }
 
     const handleSubmit = async(event) => {
         event.preventDefault()
         try {
-            const response = await signInEmailAndPasswordThroughFirebase(email, password);
-            console.log(response)
+            await signInEmailAndPasswordThroughFirebase(email, password);
         }
         catch(error){
             switch(error.code){
