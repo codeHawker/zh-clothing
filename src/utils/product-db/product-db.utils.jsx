@@ -1,3 +1,3 @@
-import SHOP_DATA from "../../shop-data.json"
+import SHOP_DATA from "../../shop-data"
 
 export const getShopData = () => SHOP_DATA

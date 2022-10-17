@@ -1,0 +1,3 @@
+bar is good.
+bar is nice.
+I love bar.
