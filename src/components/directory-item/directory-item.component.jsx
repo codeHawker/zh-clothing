@@ -16,9 +16,7 @@ const DirectoryItem = ({ category }) => {
   return (
     <DirectoryItemContainer>
       <BackgroundImage
-        style={{
-          backgroundImage: `url(${imageUrl})`,
-        }}
+        imageUrl={imageUrl}
       />
       <DirectoryBody
         className="directory-body-container"
