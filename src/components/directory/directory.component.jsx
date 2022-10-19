@@ -1,16 +1,17 @@
-import './directory.styles.scss'
 import DirectoryItem from '../directory-item/directory-item.component'
+
+import { DirectoryComponent } from './directory.styles'
 
 const Directory = ({categories}) => {
     
     return(
-      <div className='directory-container'>
+      <DirectoryComponent>
         {
           categories.map((category) => (
             <DirectoryItem category={category} key={category.id} />
           ))
         }
-    </div>
+    </DirectoryComponent>
     )
 }
 

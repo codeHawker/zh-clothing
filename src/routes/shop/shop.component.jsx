@@ -1,12 +1,7 @@
-import { Fragment, useContext } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import CategoriesPreview from "../categories-preview/categories-preview.component";
-import CategoryPreview from "../../components/category-preview/category-preview.component";
 import Category from "../category/category.component";
-
-
-import "./shop.styles.scss";
 
 const Shop = () => {
 

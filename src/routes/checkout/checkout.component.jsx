@@ -3,7 +3,7 @@ import { useContext } from "react";
 import CheckoutItem from "../../components/checkout-item/checkout-item.component";
 import { CartContext } from "../../contexts/cart.context";
 
-import './checkout.styles.scss'
+import {CheckoutContainer, CheckoutHeader, HeaderBlock, Total} from './checkout.styles'
 
 
 
@@ -14,39 +14,39 @@ const Checkout = () => {
     const totalPrice = (cartItems.length > 0) ? cartItems.reduce((sum, item) => (sum + item.quantity*item.price), 0) : 0.00
 
     return(
-        <div className="checkout-container">
-            <div className="checkout-header">
+        <CheckoutContainer>
+            <CheckoutHeader>
                 
-                <div className="header-block">
+                <HeaderBlock>
                     <span>Product</span>
-                </div>
+                </HeaderBlock>
 
-                <div className="header-block">
+                <HeaderBlock>
                     <span>Description</span>
-                </div>
+                </HeaderBlock>
 
-                <div className="header-block">
+                <HeaderBlock>
                     <span>Quantity</span>
-                </div>
+                </HeaderBlock>
 
-                <div className="header-block">
+                <HeaderBlock>
                     <span>Price</span>
-                </div>
+                </HeaderBlock>
 
-                <div className="header-block">
+                <HeaderBlock>
                     <span>Remove</span>
-                </div>
+                </HeaderBlock>
 
-            </div>
+            </CheckoutHeader>
 
             {cartItems.map((cartItem) => 
                 <CheckoutItem cartItem={cartItem} key={cartItem.id} />
             )}
 
-            <span  className="total">Total: ${totalPrice}</span>
+            <Total>Total: ${totalPrice}</Total>
 
 
-        </div>
+        </CheckoutContainer>
     )
 };
 
