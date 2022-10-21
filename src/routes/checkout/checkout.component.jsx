@@ -9,9 +9,7 @@ import {CheckoutContainer, CheckoutHeader, HeaderBlock, Total} from './checkout.
 
 
 const Checkout = () => {
-    const {cartItems} = useContext(CartContext);
-
-    const totalPrice = (cartItems.length > 0) ? cartItems.reduce((sum, item) => (sum + item.quantity*item.price), 0) : 0.00
+    const {cartItems, totalPrice} = useContext(CartContext);
 
     return(
         <CheckoutContainer>

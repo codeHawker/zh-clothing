@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const BaseButtton = styled.div`
+export const BaseButtton = styled.button`
   min-width: 165px;
   width: auto;
   height: 50px;
