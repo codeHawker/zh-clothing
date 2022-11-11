@@ -1,10 +1,10 @@
 import { StrictMode, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux';
 
-import { onAuthStateChangedListner, createUserDocumentFromAuth, getCategoriesAndDocuments } from './utils/firebase/firebase.utils';
-import { setCurrentUser } from "./store/user/user.action"
-import { setCategoriesMap } from "./store/categories/category.action"
+import { onAuthStateChangedListner, createUserDocumentFromAuth } from './utils/firebase/firebase.utils';
+
+import { setCurrentUser } from './store/user/user.action';
 
 import Authentication from './routes/authentication/authentication.component';
 import Checkout from './routes/checkout/checkout.component';
@@ -24,16 +24,6 @@ const App = () => {
     })
 
     return unsubscribe;
-  }, [dispatch]
-  );
-
-  useEffect(() => {
-    const getCategoriesMap = async () => {
-      const categoryMap = await getCategoriesAndDocuments();
-      dispatch(setCategoriesMap(categoryMap));
-    };
-
-    getCategoriesMap();
   }, [dispatch]
   );
 
