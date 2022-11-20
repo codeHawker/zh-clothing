@@ -12,7 +12,6 @@ import {
 const CategoriesPreview = () => {
   const categoriesMap = useSelector(selectCategoriesMap);
   const isLoading = useSelector(selectCategoriesIsLoading);
-  console.log("LOADING??", isLoading)
 
   return (
     <Fragment>
