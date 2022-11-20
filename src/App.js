@@ -2,9 +2,8 @@ import { StrictMode, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
-import { onAuthStateChangedListner, createUserDocumentFromAuth } from './utils/firebase/firebase.utils';
 
-import { setCurrentUser } from './store/user/user.action';
+import { checkUserSession } from './store/user/user.action';
 
 import Authentication from './routes/authentication/authentication.component';
 import Checkout from './routes/checkout/checkout.component';
@@ -16,14 +15,7 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChangedListner((user) => {
-      if (user) {
-        createUserDocumentFromAuth(user);
-      }
-      dispatch(setCurrentUser(user));
-    })
-
-    return unsubscribe;
+    dispatch(checkUserSession())
   }, [dispatch]
   );
 
