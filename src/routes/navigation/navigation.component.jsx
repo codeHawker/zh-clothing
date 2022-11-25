@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import CartIcon from '../../components/cart-icon/cart-icon.component';
 
 import { ReactComponent as CrwnLogo } from '../../assets/crown.svg';
-import { signOutUser } from '../../utils/firebase/firebase.utils';
+import { ReactComponent as ZHLogo } from '../../assets/zh-clothing.svg';
 
 import CartDropdown from '../../components/cart-dropdown/cart-dropdown.component';
 import { selectCurrentUser } from '../../store/user/user.selector';
@@ -30,7 +30,8 @@ const Navigation = () => {
         <NavigationContainer>
 
             <LogoContainer to='/' >
-                <CrwnLogo className= 'logo' ></CrwnLogo>
+                <ZHLogo className= 'logo' ></ZHLogo>
+                {/* <CrwnLogo className= 'logo' ></CrwnLogo> */}
             </LogoContainer>
 
             <NavLinks >
